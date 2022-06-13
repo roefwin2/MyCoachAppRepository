@@ -11,7 +11,9 @@ interface Game{
 
 data class PlayerVSComputerGame(val gamer1 : Gamer,val gamer2: Gamer) : Game {
     var playerSymbol : Symbol = Rock
-        get() = this.playerSymbol
+        get() {
+            return field
+        }
         set(value) {
         field = value
     }

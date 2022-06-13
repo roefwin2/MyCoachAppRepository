@@ -1,6 +1,8 @@
 package com.example.myshifoumi.models.user
 
+import com.example.myshifoumi.models.symbols.Paper
 import com.example.myshifoumi.models.symbols.Rock
+import com.example.myshifoumi.models.symbols.Scissor
 import com.example.myshifoumi.models.symbols.Symbol
 
 interface Gamer{
@@ -15,6 +17,7 @@ data class Player(val name : String, val score :Int): Gamer{
 data class Computer(val name : String,val score: Int) : Gamer{
 
     override fun playOneSymbol(chooseSymbol: Symbol): Symbol {
-      return Rock
+        val list = listOf(Rock, Paper, Scissor)
+        return list.random()
     }
 }
