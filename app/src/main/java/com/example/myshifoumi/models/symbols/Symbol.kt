@@ -9,22 +9,22 @@ interface Symbol
 
 fun Symbol.resultAgainst(symbol: Symbol) : Result{
    return when{
-        this == symbol -> Draw("Draw")
+        this == symbol -> Draw("${this.toString()} vs ${symbol.toString()} => Draw")
         this == Rock -> if (symbol == Scissor){
-            Win("rock beat the scissor")
+            Win(" ${this.toString()} vs ${symbol.toString()} => rock beat the scissor")
         }else{
-            Lose("the paper recover the rock")
+            Lose(" ${this.toString()} vs ${symbol.toString()} => the paper recover the rock")
         }
         this == Scissor -> if (symbol == Rock){
-            Lose("the scissor is beating by the rock")
+            Lose(" ${this.toString()} vs ${symbol.toString()} => the scissor is beating by the rock")
         }else{
-            Win("the scissor cut the paper")
+            Win(" ${this.toString()} vs ${symbol.toString()} => the scissor cut the paper")
         }
         this == Paper -> if (symbol == Scissor){
-            Lose("the paper is cutted by the scissor")
+            Lose(" ${this.toString()} vs ${symbol.toString()} => the paper is cutted by the scissor")
         }else{
-            Win("the paper cover the rock")
+            Win("${this.toString()} vs ${symbol.toString()} => the paper cover the rock")
         }
-        else -> Draw("Imcmpatible combinaison")
+        else -> Draw("Imcompatible combinaison")
     }
 }

@@ -39,11 +39,16 @@ class GameFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
-        viewModel.gameScreen.observe(viewLifecycleOwner, Observer {
+        viewModel.gameScreen.observe(viewLifecycleOwner, {
             processGameScreen(it)
         })
 
+        setUi()
+    }
+
+    private fun setUi() {
         viewModel.startGameScreen(args.gameType)
+
         when(args.gameType){
             PlayerGame ->{
                 binding.scissor.setOnClickListener {

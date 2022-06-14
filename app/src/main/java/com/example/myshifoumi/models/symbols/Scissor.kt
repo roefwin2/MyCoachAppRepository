@@ -1,3 +1,7 @@
 package com.example.myshifoumi.models.symbols
 
-object Scissor : Symbol
+object Scissor : Symbol{
+    override fun toString(): String {
+        return "Scissor"
+    }
+}
