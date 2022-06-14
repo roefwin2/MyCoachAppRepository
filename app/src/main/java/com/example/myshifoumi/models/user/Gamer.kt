@@ -6,17 +6,17 @@ import com.example.myshifoumi.models.symbols.Scissor
 import com.example.myshifoumi.models.symbols.Symbol
 
 interface Gamer{
-    fun playOneSymbol(chooseSymbol: Symbol): Symbol
+    fun playOneSymbol(chooseSymbol: Symbol?): Symbol
 }
 data class Player(val name : String, val score :Int): Gamer{
 
-    override fun playOneSymbol(chooseSymbol: Symbol): Symbol {
-        return chooseSymbol
+    override fun playOneSymbol(chooseSymbol: Symbol?): Symbol {
+        return chooseSymbol ?: Rock
     }
 }
 data class Computer(val name : String,val score: Int) : Gamer{
 
-    override fun playOneSymbol(chooseSymbol: Symbol): Symbol {
+    override fun playOneSymbol(chooseSymbol: Symbol?): Symbol {
         val list = listOf(Rock, Paper, Scissor)
         return list.random()
     }

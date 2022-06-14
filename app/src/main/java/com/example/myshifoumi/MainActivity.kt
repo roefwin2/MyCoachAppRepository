@@ -17,9 +17,6 @@ class MainActivity : AppCompatActivity() {
     val binding: ActivityMainBinding
         get() = _binding!!
 
-    val player = Player("Régis", 1)
-    val computer = Computer("CPU", 1)
-    val game = PlayerVSComputerGame(player, computer)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,19 +24,5 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.scissor.setOnClickListener {
-            game.playerSymbol = Scissor
-        }
-        binding.rock.setOnClickListener {
-            game.playerSymbol = Rock
-        }
-        binding.paper.setOnClickListener {
-            game.playerSymbol = Paper
-        }
-
-        binding.button.setOnClickListener {
-           val result = game.startGame()
-            binding.result.text = result.msg
-        }
     }
 }

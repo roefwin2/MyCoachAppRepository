@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chooseGamerFragment">
+
+    <fragment
+        android:id="@+id/chooseGamerFragment"
+        android:name="com.example.myshifoumi.feature.choosefragment.ChooseGamerFragment"
+        android:label="choose_gamer_fragment"
+        tools:layout="@layout/choose_gamer_fragment" >
+        <action
+            android:id="@+id/action_chooseGamerFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.myshifoumi.feature.gamefragment.GameFragment"
+        android:label="game_fragment"
+        tools:layout="@layout/game_fragment" >
+        <argument
+            android:name="gameType"
+            app:argType="com.example.myshifoumi.navigation.GameNavigation" />
+    </fragment>
+</navigation>
