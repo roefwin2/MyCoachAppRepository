@@ -23,6 +23,8 @@ class GameViewModel : ViewModel() {
     val gameScreen: LiveData<GameScreen>
         get() = _gameScreen
 
+
+    //Create the game PlayerVSCPU or CPUVSCPU
     fun startGameScreen(gameNavigation: GameNavigation) {
         when(gameNavigation){
             is ComputerGame -> shifoumiRepository.createComputerVSComputerGame()

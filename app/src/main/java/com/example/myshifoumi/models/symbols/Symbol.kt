@@ -9,11 +9,11 @@ interface Symbol
 
 fun Symbol.resultAgainst(symbol: Symbol) : Result{
    return when{
-        this == symbol -> Draw("${this.toString()} vs ${symbol.toString()} => Draw")
+        this == symbol -> Draw("${this.toString()} vs ${symbol.toString()}")
         this == Rock -> if (symbol == Scissor){
-            Win(" ${this.toString()} vs ${symbol.toString()} => rock beat the scissor")
+            Win(" ${this.toString()} vs ${symbol.toString()} => the rock beat the scissor")
         }else{
-            Lose(" ${this.toString()} vs ${symbol.toString()} => the paper recover the rock")
+            Lose(" ${this.toString()} vs ${symbol.toString()} => the rock is recoved by rock")
         }
         this == Scissor -> if (symbol == Rock){
             Lose(" ${this.toString()} vs ${symbol.toString()} => the scissor is beating by the rock")
